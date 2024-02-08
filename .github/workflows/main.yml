@@ -12,10 +12,10 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build docker
       run: |
-        docker build . -t $REPO_NAME/$IMAGE_NAME
+        docker build . -t devops/student_service
     - name: run docker
       run: |
-        docker run -d -e 8080:8080 -host=172.17.0.2 $REPO_NAME/$IMAGE_NAME:latest && \
+        docker run -d -e 8080:8080 -host=172.17.0.2 devops/student_service:latest && \
           docker ps && sleep 5
     - name: Run API Tests
       id: run-newman

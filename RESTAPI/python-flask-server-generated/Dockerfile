@@ -7,9 +7,11 @@ COPY RESTAPI/python-flask-server-generated/requirements.txt /usr/src/app/
 
 RUN pip3 install --no-cache-dir -r requirements.txt
 
-COPY . /usr/src/app
+COPY RESTAPI/python-flask-server-generated/setup.py /usr/src/app/
 
 RUN python setup.py install
+
+COPY . /usr/src/app
 
 EXPOSE 8080
 

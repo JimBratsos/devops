@@ -7,7 +7,7 @@ COPY RESTAPI/python-flask-server-generated/requirements.txt /usr/src/app/
 
 RUN pip3 install --no-cache-dir -r requirements.txt
 
-RUN python setup.py install
+RUN python RESTAPI/python-flask-server-generated/setup.py install
 
 COPY . /usr/src/app
 
